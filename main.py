@@ -77,13 +77,13 @@ ARCH_PALADIN_TANK = [
 IMPERIAL_CHUNIN_FARMING = [
     #3245 3254 
     (2, 1),
-    (1, 1),
-    (3, 1),
-    (4, 1),
-    (2, 1),
-    (1, 1),
-    (4, 1),
-    (3, 1),
+    (1, 2),
+    (3, 2),
+    (4, 2),
+    (2, 2),
+    (1, 2),
+    (4, 2),
+    (3, 2),
 
 
 ]
@@ -104,7 +104,7 @@ def run_rotation_arch_paladin(rotation):
             time.sleep(delay)
 
 
-def run_rotation_imperial_chunin(rotation):
+def run_rotation_imperial_chunin_farming(rotation):
     print("starting rotation (move mouse to top-left to stop)")
     print("starting in 5 sec")
     time.sleep(5)
@@ -112,11 +112,7 @@ def run_rotation_imperial_chunin(rotation):
         for attack, delay in rotation:
             print(f"Attacking with key {attack}...")
             ATTACKS[attack]()
-            if attack == 2:
-                pyautogui.press("esc")
-                time.sleep(1)
-                pyautogui.press("T")
-            
+                        
             if random.randint(1, 10) == 1:
                 print("get money")
                 pyautogui.leftClick(SEVEN_MONEY_1_X, SEVEN_MONEY_1_Y)
@@ -173,7 +169,7 @@ def farming_stuff():
     options = {
         
         "1": lambda: run_rotation_arch_paladin(ARCH_PALADIN_FARMING),
-        "2": lambda: run_rotation_imperial_chunin(IMPERIAL_CHUNIN_FARMING),
+        "2": lambda: run_rotation_imperial_chunin_farming(IMPERIAL_CHUNIN_FARMING),
         "9": position,
         "0": update
         }
