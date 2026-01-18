@@ -266,6 +266,7 @@ def farming_stuff():
 
     1: Arch paladin
     2: imperial chunin 
+    3: blood
                 
     """)
 
