@@ -11,8 +11,8 @@ THIRD_X, THIRD_Y = 655, 706 # key 4 15.4 sec
 FOURTH_X, FOURTH_Y = 722, 705 # key 5 15,5 sec
 
 
-SEVEN_MONEY_1_X, SEVEN_MONEY_1_Y = None, None
-SEVEN_MONEY_2_X, SEVEN_MONEY_2_Y = None, None
+SEVEN_MONEY_1_X, SEVEN_MONEY_1_Y = 825, 71
+SEVEN_MONEY_2_X, SEVEN_MONEY_2_Y = 767, 71
 
 
 
@@ -79,7 +79,7 @@ IMPERIAL_CHUNIN_FARMING = [
     (2, 2),
     (1, 1),
     (3, 1),
-    (4, 2),
+    (4, 1),
     (2, 2),
     (1, 1),
     (4, 2),
@@ -108,7 +108,7 @@ def run_rotation_imperial_chunin_farming(rotation):
     print("starting rotation (move mouse to top-left to stop)")
     print("starting in 5 sec")
     time.sleep(5)
-    random_chance_interval = 100
+    random_chance_interval = 500
     while True:
         for attack, delay in rotation:
             print(f"Attacking with key {attack}...")
