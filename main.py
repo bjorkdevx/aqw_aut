@@ -116,10 +116,9 @@ def run_rotation_imperial_chunin_farming(rotation):
             time.sleep(delay)
          
             if random.randint(1, random_chance_interval) == 1:
-
                 if random.randint(1,2) == 1:
                     pyautogui.leftClick(SEVEN_MONEY_1_X, SEVEN_MONEY_1_Y)
-                    time.sleep(2)
+                    time.sleep(3)
                     pyautogui.leftClick(SEVEN_MONEY_2_X, SEVEN_MONEY_2_Y)
 
                    
