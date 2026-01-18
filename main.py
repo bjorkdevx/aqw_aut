@@ -101,6 +101,20 @@ IMPERIAL_CHUNIN_FARMING = [
 ]
 
 
+SWORD_MASTER_RANDOM = [
+    #3245 3254 
+    (2, 2),
+    (1, 2),
+    (3, 1),
+    (4, 1),
+    (2, 2),
+    (1, 1),
+    (4, 2),
+    (3, 2),
+
+
+]
+
 def run_rotation_arch_paladin(rotation):
     print("starting rotation (move mouse to top-left to stop)")
     print("starting in 5 sec")
@@ -114,6 +128,24 @@ def run_rotation_arch_paladin(rotation):
                 time.sleep(1)
                 pyautogui.press("T")
             time.sleep(delay)
+
+def run_rotation_swrod_master(rotation):
+    print("starting rotation (move mouse to top-left to stop)")
+    print("starting in 5 sec")
+    time.sleep(5)
+    while True:
+        for attack, delay in rotation:
+            print(f"Attacking with key {attack}...")
+            ATTACKS[attack]()
+            if attack == 2:
+                pyautogui.press("esc")
+                time.sleep(1)
+                pyautogui.press("T")
+            time.sleep(delay)
+
+
+
+
 
 
 def run_rotation_imperial_chunin_farming(rotation):
@@ -154,6 +186,20 @@ def run_rotation_arch_paladin_moeny(rotation):
                     pyautogui.leftClick(SEVEN_MONEY_2_X, SEVEN_MONEY_2_Y)
 
 
+def swrod_master():
+    pick = input("""
+     Sword Master
+     ------------
+     1: "random"
+
+     Pick an otion: """)
+    options = {
+        "1": lambda: run_rotation_swrod_master(SWORD_MASTER_RANDOM),
+    }
+    if pick in options:
+        options[pick]()
+    else:
+        main()
 
 
 def arch_paladin():
@@ -236,14 +282,16 @@ def main():
     print("_______________________________")
     pick = input("""Pick 1 of the options\n
                 1: Arch paladin
-                2: Farming
+                2: Sword Master
+                3: Farming
                 9: Get position
                 0: Update
                  """)
 
     options = {
         "1": arch_paladin,
-        "2": farming_stuff,
+        "2": swrod_master,
+        "3": farming_stuff,
         "9": position,
         "0": update,
     }
