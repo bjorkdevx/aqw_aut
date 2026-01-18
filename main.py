@@ -1,11 +1,17 @@
 import pyautogui
 import time
-
+import os 
+import subprocess
+import sys
 
 FIRST_X, FIRST_Y = 552, 696# key 2 coldon typ 2,6 sec
 SECOND_X, SECOND_Y = 612, 705 # key 3 coldon typ 6.2 sec 
 THIRD_X, THIRD_Y = 655, 706 # key 4 15.4 sec
 FOURTH_X, FOURTH_Y = 722, 705 # key 5 15,5 sec
+
+
+
+GIT_REPO = "https://github.com/bjorkdevx/aqw_aut.git"
 
 ATTACKS = {
     1: lambda: pyautogui.leftClick(FIRST_X, FIRST_Y),
@@ -105,17 +111,31 @@ def position():
     print(pyautogui.position())
     main()
 
+
+def update():
+    print("pulling the latest update")
+    try:
+        subprocess.run(["git", "pull", "origin", "main"])
+        print("Repo clone successfully!")
+    except subprocess.CalledProcessError:
+        print("Failed to pull the latest changes!")
+
+       
+
+
 def main():
-    print("Hello from autoclicker!")
-    
+    print("Welcome to AutoClicker Tool!")
+    print("_______________________________")
     pick = input("""Pick 1 of the options\n
                 1: Arch paladin
-                9: Get position 
+                9: Get position
+                0: Update
                  """)
 
     options = {
         "1": arch_paladin, 
-        "9": position
+        "9": position,
+        "0": update
     }
 
     if pick in options:
