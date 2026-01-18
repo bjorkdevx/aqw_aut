@@ -11,8 +11,8 @@ THIRD_X, THIRD_Y = 655, 706 # key 4 15.4 sec
 FOURTH_X, FOURTH_Y = 722, 705 # key 5 15,5 sec
 
 
-SEVEN_MONEY_1_X, SEVEN_MONEY_1_Y = 825, 71
-SEVEN_MONEY_2_X, SEVEN_MONEY_2_Y = 767, 71
+SEVEN_MONEY_1_X, SEVEN_MONEY_1_Y = 763, 66
+SEVEN_MONEY_2_X, SEVEN_MONEY_2_Y = 826, 68
 
 
 
@@ -118,8 +118,6 @@ def run_rotation_imperial_chunin_farming(rotation):
             if random.randint(1, random_chance_interval) == 1:
 
                 if random.randint(1,2) == 1:
-                    print("get money")
-                    print((SEVEN_MONEY_1_X, SEVEN_MONEY_1_Y, SEVEN_MONEY_2_X, SEVEN_MONEY_2_Y))
                     pyautogui.leftClick(SEVEN_MONEY_1_X, SEVEN_MONEY_1_Y)
                     time.sleep(2)
                     pyautogui.leftClick(SEVEN_MONEY_2_X, SEVEN_MONEY_2_Y)
@@ -196,6 +194,7 @@ def update():
     try:
         subprocess.run(["git", "pull", "origin", "main"])
         print("Repo clone successfully!")
+        main()
     except subprocess.CalledProcessError:
         print("Failed to pull the latest changes!")
 
