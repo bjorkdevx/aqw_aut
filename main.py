@@ -206,6 +206,7 @@ def main():
     print("_______________________________")
     pick = input("""Pick 1 of the options\n
                 1: Arch paladin
+                2: Farming
                 9: Get position
                 0: Update
                  """)
@@ -214,7 +215,7 @@ def main():
         "1": arch_paladin,
         "2": farming_stuff,
         "9": position,
-        "0": update
+        "0": update,
     }
 
     if pick in options:
