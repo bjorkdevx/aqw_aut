@@ -66,7 +66,19 @@ ARCH_PALADIN_TANK = [
     (1, 2.6),
 ]
 
-def run_rotation(rotation):
+
+
+
+IMPERIAL_CHUNIN_FARMING = [
+    (),
+
+]
+
+
+
+
+
+def run_rotation_arch_paladin(rotation):
     print("starting rotation (move mouse to top-left to stop)")
     print("starting in 5 sec")
     time.sleep(5)
@@ -80,6 +92,23 @@ def run_rotation(rotation):
                 pyautogui.press("T")
             time.sleep(delay)
 
+
+def run_rotation_imperial_chunin(rotation):
+    print("starting rotation (move mouse to top-left to stop)")
+    print("starting in 5 sec")
+    time.sleep(5)
+    while True:
+        for attack, delay in rotation:
+            print(f"Attacking with key {attack}...")
+            ATTACKS[attack]()
+            if attack == 2:
+                pyautogui.press("esc")
+                time.sleep(1)
+                pyautogui.press("T")
+            time.sleep(delay)
+
+
+
 def arch_paladin():
     
     pick = input("""
@@ -92,10 +121,10 @@ def arch_paladin():
 
      Pick an otion: """)
     options = {
-        "1": lambda: run_rotation(ARCH_PALADIN_SOLO_DPS),
-        "2": lambda: run_rotation(ARCH_PALADIN_FARMING),
-        "3": lambda: run_rotation(ARCH_PALADIN_SUPPORT),
-        "4": lambda: run_rotation(ARCH_PALADIN_TANK)
+        "1": lambda: run_rotation_arch_paladin(ARCH_PALADIN_SOLO_DPS),
+        "2": lambda: run_rotation_arch_paladin(ARCH_PALADIN_FARMING),
+        "3": lambda: run_rotation_arch_paladin(ARCH_PALADIN_SUPPORT),
+        "4": lambda: run_rotation_arch_paladin(ARCH_PALADIN_TANK)
     }
     if pick in options:
         options[pick]()
@@ -110,6 +139,36 @@ def position():
     time.sleep(4)
     print(pyautogui.position())
     main()
+
+
+def Farming():
+    
+    pick = input("""Pick 1 of the options\n
+
+
+    1: Arch paladin
+    2: imperial chunin 
+                
+    """)
+
+    options = {
+        
+        "1": lambda: run_rotation_arch_paladin(ARCH_PALADIN_FARMING),
+        "2": lambda: run_rotation_imperial_chunin(IMPERIAL_CHUNIN_FARMING),
+        "9": position,
+        "0": update
+        }
+
+    if pick in options:
+        options[pick]()
+    else:
+        print("pick")
+
+
+
+
+
+
 
 
 def update():
@@ -133,7 +192,8 @@ def main():
                  """)
 
     options = {
-        "1": arch_paladin, 
+        "1": arch_paladin,
+        "2": Farming,
         "9": position,
         "0": update
     }
