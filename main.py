@@ -113,17 +113,18 @@ def run_rotation_imperial_chunin_farming(rotation):
         for attack, delay in rotation:
             print(f"Attacking with key {attack}...")
             ATTACKS[attack]()
-                        
+            time.sleep(delay)
+         
             if random.randint(1, random_chance_interval) == 1:
 
                 if random.randint(1,2) == 1:
                     print("get money")
+                    print((SEVEN_MONEY_1_X, SEVEN_MONEY_1_Y, SEVEN_MONEY_2_X, SEVEN_MONEY_2_Y)
                     pyautogui.leftClick(SEVEN_MONEY_1_X, SEVEN_MONEY_1_Y)
                     time.sleep(2)
                     pyautogui.leftClick(SEVEN_MONEY_2_X, SEVEN_MONEY_2_Y)
 
-            time.sleep(delay)
-            
+                   
 
 
 
