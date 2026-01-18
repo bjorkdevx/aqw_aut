@@ -3,11 +3,16 @@ import time
 import os 
 import subprocess
 import sys
+import random
 
 FIRST_X, FIRST_Y = 552, 696# key 2 coldon typ 2,6 sec
 SECOND_X, SECOND_Y = 612, 705 # key 3 coldon typ 6.2 sec 
 THIRD_X, THIRD_Y = 655, 706 # key 4 15.4 sec
 FOURTH_X, FOURTH_Y = 722, 705 # key 5 15,5 sec
+
+
+SEVEN_MONEY_1_X, SEVEN_MONEY_1_Y = None, None
+SEVEN_MONEY_2_X, SEVEN_MONEY_2_Y = None, None
 
 
 
@@ -70,12 +75,18 @@ ARCH_PALADIN_TANK = [
 
 
 IMPERIAL_CHUNIN_FARMING = [
-    (),
+    #3245 3254 
+    (2, 1),
+    (1, 1),
+    (3, 1),
+    (4, 1),
+    (2, 1),
+    (1, 1),
+    (4, 1),
+    (3, 1),
+
 
 ]
-
-
-
 
 
 def run_rotation_arch_paladin(rotation):
@@ -105,7 +116,15 @@ def run_rotation_imperial_chunin(rotation):
                 pyautogui.press("esc")
                 time.sleep(1)
                 pyautogui.press("T")
+            
+            if random.randint(1, 10) == 1:
+                print("get money")
+                pyautogui.leftClick(SEVEN_MONEY_1_X, SEVEN_MONEY_1_Y)
+                time.sleep(2)
+                pyautogui.leftClick(SEVEN_MONEY_2_X, SEVEN_MONEY_2_Y)
+
             time.sleep(delay)
+            
 
 
 
