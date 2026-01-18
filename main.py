@@ -108,7 +108,7 @@ def run_rotation_imperial_chunin_farming(rotation):
     print("starting rotation (move mouse to top-left to stop)")
     print("starting in 5 sec")
     time.sleep(5)
-    random_chance_interval = 1
+    random_chance_interval = 2
     while True:
         for attack, delay in rotation:
             print(f"Attacking with key {attack}...")
