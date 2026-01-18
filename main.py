@@ -160,7 +160,7 @@ def position():
     main()
 
 
-def Farming():
+def farming_stuff():
     
     pick = input("""Pick 1 of the options\n
 
@@ -212,7 +212,7 @@ def main():
 
     options = {
         "1": arch_paladin,
-        "2": Farming,
+        "2": farming_stuff,
         "9": position,
         "0": update
     }
