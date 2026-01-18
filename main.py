@@ -71,6 +71,18 @@ ARCH_PALADIN_TANK = [
     (1, 2.6),
 ]
 
+ARCH_PALADIN_FARMING_MONEY = [
+    #combo to add 4225223 look att the top to now what to write
+    (3, 1),
+    (1, 3),
+    (1, 1),
+    (4, 2),
+    (1, 3),
+    (1, 2.6),
+    (2, 2),
+
+    
+]
 
 
 
@@ -123,6 +135,24 @@ def run_rotation_imperial_chunin_farming(rotation):
                     pyautogui.leftClick(SEVEN_MONEY_2_X, SEVEN_MONEY_2_Y)
 
                    
+def run_rotation_arch_paladin_moeny(rotation):
+    print("starting rotation (move mouse to top-left to stop)")
+    print("starting in 5 sec")
+    time.sleep(5)
+    random_chance_interval = 2
+    while True:
+        for attack, delay in rotation:
+            print(f"Attacking with key {attack}...")
+            ATTACKS[attack]()
+            time.sleep(delay)
+         
+            if random.randint(1, random_chance_interval) == 1:
+                if random.randint(1,2) == 1:
+                    print("turin in money")
+                    pyautogui.leftClick(SEVEN_MONEY_1_X, SEVEN_MONEY_1_Y)
+                    time.sleep(3)
+                    pyautogui.leftClick(SEVEN_MONEY_2_X, SEVEN_MONEY_2_Y)
+
 
 
 
@@ -170,7 +200,7 @@ def farming_stuff():
 
     options = {
         
-        "1": lambda: run_rotation_arch_paladin(ARCH_PALADIN_FARMING),
+        "1": lambda: run_rotation_arch_paladin(ARCH_PALADIN_FARMING_MONEY),
         "2": lambda: run_rotation_imperial_chunin_farming(IMPERIAL_CHUNIN_FARMING),
         "9": position,
         "0": update
