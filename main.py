@@ -77,7 +77,7 @@ ARCH_PALADIN_TANK = [
 IMPERIAL_CHUNIN_FARMING = [
     #3245 3254 
     (2, 2),
-    (1, 2),
+    (1, 1),
     (3, 1),
     (4, 2),
     (2, 2),
