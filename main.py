@@ -158,7 +158,7 @@ def run_rotation_blood_farming(rotation):
     print("starting rotation (move mouse to top-left to stop)")
     print("starting in 5 sec")
     time.sleep(5)
-    random_chance_interval = 2
+    random_chance_interval = 4
     while True:
         for attack, delay in rotation:
             print(f"Attacking with key {attack}...")
@@ -169,7 +169,7 @@ def run_rotation_blood_farming(rotation):
                 if random.randint(1,2) == 1:
                     print("turin in money")
                     pyautogui.leftClick(SEVEN_MONEY_1_X, SEVEN_MONEY_1_Y)
-                    time.sleep(3)
+                    time.sleep(1.5)
                     pyautogui.leftClick(SEVEN_MONEY_2_X, SEVEN_MONEY_2_Y)
 
 
@@ -188,7 +188,7 @@ def run_rotation_imperial_chunin_farming(rotation):
                 if random.randint(1,2) == 1:
                     print("turin in money")
                     pyautogui.leftClick(SEVEN_MONEY_1_X, SEVEN_MONEY_1_Y)
-                    time.sleep(3)
+                    time.sleep(1.5)
                     pyautogui.leftClick(SEVEN_MONEY_2_X, SEVEN_MONEY_2_Y)
 
                    
@@ -207,7 +207,7 @@ def run_rotation_arch_paladin_moeny(rotation):
                 if random.randint(1,2) == 1:
                     print("turin in money")
                     pyautogui.leftClick(SEVEN_MONEY_1_X, SEVEN_MONEY_1_Y)
-                    time.sleep(3)
+                    time.sleep(1.5)
                     pyautogui.leftClick(SEVEN_MONEY_2_X, SEVEN_MONEY_2_Y)
 
 
@@ -275,8 +275,6 @@ def farming_stuff():
         "1": lambda: run_rotation_arch_paladin(ARCH_PALADIN_FARMING_MONEY),
         "2": lambda: run_rotation_imperial_chunin_farming(IMPERIAL_CHUNIN_FARMING),
         "3": lambda: run_rotation_blood_farming(BLOOD),
-        "9": position,
-        "0": update
         }
 
     if pick in options:
