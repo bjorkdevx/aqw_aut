@@ -41,8 +41,8 @@ def choose_preset():
     global ATTACKS
     pick =input("""
     Choose preset:
-    1: Dev
-    2: No dev
+    1: Ph
+    2: Jo
 
     """)
     if pick not in PRESETS:
