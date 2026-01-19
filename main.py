@@ -264,7 +264,7 @@ def farming_stuff():
     pick = input("""Pick 1 of the options\n
 
 
-    1: Arch paladin
+    1: Arch paladin work not good
     2: imperial chunin 
     3: blood
                 
