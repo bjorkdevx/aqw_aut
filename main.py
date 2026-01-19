@@ -347,8 +347,10 @@ def update():
     try:
         subprocess.run(["git", "pull", "origin", "main"])
         print("Repo clone successfully!")
+        sys.exit(0)
     except subprocess.CalledProcessError:
         print("Failed to pull the latest changes!")
+        sys.exit(1)
 
        
 
