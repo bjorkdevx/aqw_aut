@@ -5,77 +5,25 @@ import subprocess
 import sys
 import random
 
-
-ATTACKS = {}
-
-PRESETS = {
-    "1": {
-        "FIRST": (552, 696),
-        "SECOND": (612, 705 ),
-        "THIRD": (655, 706 ),
-        "FOURTH": (722, 705 ),
-        "MONEY_1": (763, 66),
-        "MONEY_2": (826, 68),
-    },
-    "2": {
-        "FIRST": (833, 955),
-        "SECOND": (914, 957),
-        "THIRD": (997, 956),
-        "FOURTH": (1080, 951),
-        "MONEY_1": (1133, 78),
-        "MONEY_2": (1216, 83),
-    }
-
-}
+FIRST_X, FIRST_Y = 552, 696# key 2 coldon typ 2,6 sec
+SECOND_X, SECOND_Y = 612, 705 # key 3 coldon typ 6.2 sec 
+THIRD_X, THIRD_Y = 655, 706 # key 4 15.4 sec
+FOURTH_X, FOURTH_Y = 722, 705 # key 5 15,5 sec
 
 
+SEVEN_MONEY_1_X, SEVEN_MONEY_1_Y = 763, 66
+SEVEN_MONEY_2_X, SEVEN_MONEY_2_Y = 826, 68
 
-
-def choose_preset():
-    global FIRST_X, FIRST_Y 
-    global SECOND_X, SECOND_Y
-    global THIRD_X, THIRD_Y
-    global FOURTH_X, FOURTH_Y 
-    global SEVEN_MONEY_1_X, SEVEN_MONEY_1_Y
-    global SEVEN_MONEY_2_X, SEVEN_MONEY_2_Y
-    global ATTACKS
-    pick =input("""
-    Choose preset:
-    1: Dev
-    2: No dev
-
-    """)
-    if pick not in PRESETS:
-        print("Invalid preset, using preset 1")
-        pick = "1"
-
-    p = PRESETS[pick]
-
-    
-    FIRST_X, FIRST_Y = p["FIRST"]
-    SECOND_X, SECOND_Y = p["SECOND"] 
-    THIRD_X, THIRD_Y = p["THIRD"]
-    FOURTH_X, FOURTH_Y = p["FOURTH"]
-    SEVEN_MONEY_1_X, SEVEN_MONEY_1_Y = p["MONEY_1"]
-    SEVEN_MONEY_2_X, SEVEN_MONEY_2_Y = p["MONEY_2"]
-
-    ATTACKS = {
-        1: lambda: pyautogui.leftClick(FIRST_X, FIRST_Y),
-        2: lambda: pyautogui.leftClick(SECOND_X, SECOND_Y),
-        3: lambda: pyautogui.leftClick(THIRD_X, THIRD_Y),
-        4: lambda: pyautogui.leftClick(FOURTH_X, FOURTH_Y)
-    }
-
-    print(f"Preset {pick} loaded")
-
-
-
-    
 
 
 GIT_REPO = "https://github.com/bjorkdevx/aqw_aut.git"
 
-
+ATTACKS = {
+    1: lambda: pyautogui.leftClick(FIRST_X, FIRST_Y),
+    2: lambda: pyautogui.leftClick(SECOND_X, SECOND_Y),
+    3: lambda: pyautogui.leftClick(THIRD_X, THIRD_Y),
+    4: lambda: pyautogui.leftClick(FOURTH_X, FOURTH_Y)
+}
 
 
 
@@ -379,6 +327,5 @@ def main():
         main()
 
 if __name__ == "__main__":
-    choose_preset()
     main()
 
