@@ -1,8 +1,0 @@
-FIRST_X, FIRST_Y = 833, 955# key 2 coldon typ 2,6 sec
-SECOND_X, SECOND_Y = 914, 957 # key 3 coldon typ 6.2 sec 
-THIRD_X, THIRD_Y = 997, 956 # key 4 15.4 sec
-FOURTH_X, FOURTH_Y = 1080, 951 # key 5 15,5 sec
-
-
-SEVEN_MONEY_1_X, SEVEN_MONEY_1_Y = 1133, 78
-SEVEN_MONEY_2_X, SEVEN_MONEY_2_Y = 1216, 83
