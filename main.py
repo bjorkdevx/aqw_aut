@@ -70,7 +70,7 @@ def choose_preset():
 
 
 
-    
+D_YAMI_FAST = 1.5   
 
 
 GIT_REPO = "https://github.com/bjorkdevx/aqw_aut.git"
@@ -158,13 +158,13 @@ YAMI_NO_RONINI_DMG = [
     (3, 2),
     (2, 1),
     (3, 2.2),
-    (3, 1.8),
-    (1, 1.8),
-    (3, 1.8),
-    (1, 1.8),
-    (3, 1.8),
-    (1, 1.8),
-    (3, 1.8),
+    (3, D_YAMI_FAST),
+    (1, D_YAMI_FAST),
+    (3, D_YAMI_FAST),
+    (1, D_YAMI_FAST),
+    (3, D_YAMI_FAST),
+    (1, D_YAMI_FAST),
+    (3, D_YAMI_FAST),
     (4, 1.8),
 ]
 
