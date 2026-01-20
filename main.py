@@ -153,7 +153,22 @@ IMPERIAL_CHUNIN_FARMING = [
 ]
 
 
-SWORD_MASTER_RANDOM = [
+YAMI_NO_RONINI_DMG = [
+    #434424 24245 
+    (3, 2),
+    (2, 1),
+    (3, 1.8),
+    (3, 2),
+    (1, 2),
+    (3, 2),
+    (1, 2),
+    (3, 2),
+    (1, 2),
+    (3, 2),
+    (5, 2),
+]
+
+YAMI_NO_RONINI_SURVIVAL = [
     #3245 3254 
     (2, 2),
     (1, 2),
@@ -163,8 +178,6 @@ SWORD_MASTER_RANDOM = [
     (1, 1),
     (4, 2),
     (3, 2),
-
-
 ]
 
 BLOOD = [
@@ -185,12 +198,10 @@ def run_rotation_arch_paladin(rotation):
             print(f"Attacking with key {attack}...")
             ATTACKS[attack]()
             if attack == 2:
-                pyautogui.press("esc")
-                time.sleep(1)
                 pyautogui.press("T")
             time.sleep(delay)
 
-def run_rotation_swrod_master(rotation):
+def run_rotation_yami_no_ronin(rotation):
     print("starting rotation (move mouse to top-left to stop)")
     print("starting in 5 sec")
     time.sleep(5)
@@ -199,8 +210,6 @@ def run_rotation_swrod_master(rotation):
             print(f"Attacking with key {attack}...")
             ATTACKS[attack]()
             if attack == 2:
-                pyautogui.press("esc")
-                time.sleep(1)
                 pyautogui.press("T")
             time.sleep(delay)
 
@@ -263,15 +272,17 @@ def run_rotation_arch_paladin_moeny(rotation):
                     pyautogui.leftClick(SEVEN_MONEY_2_X, SEVEN_MONEY_2_Y)
 
 
-def swrod_master():
+def yami_no_ronin():
     pick = input("""
-     Sword Master
+     Yami no Ronin
      ------------
-     1: "random"
+     1: "DMG"
+     2: "Survival"
 
      Pick an otion: """)
     options = {
-        "1": lambda: run_rotation_swrod_master(SWORD_MASTER_RANDOM),
+        "1": lambda: run_rotation_yami_no_ronin(YAMI_NO_RONINI_DMG),
+        "2": lambda: run_rotation_yami_no_ronin(YAMI_NO_RONINI_SURVIVAL)
     }
     if pick in options:
         options[pick]()
@@ -360,7 +371,7 @@ def main():
     print("_______________________________")
     pick = input("""Pick 1 of the options\n
                 1: Arch paladin
-                2: Sword Master
+                2: Yami no Ronin
                 3: Farming
                 9: Get position
                 0: Update
@@ -368,7 +379,7 @@ def main():
 
     options = {
         "1": arch_paladin,
-        "2": swrod_master,
+        "2": yami_no_ronin,
         "3": farming_stuff,
         "9": position,
         "0": update,
