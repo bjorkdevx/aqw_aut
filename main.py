@@ -209,8 +209,6 @@ def run_rotation_yami_no_ronin(rotation):
         for attack, delay in rotation:
             print(f"Attacking with key {attack}...")
             ATTACKS[attack]()
-            if attack == 2:
-                pyautogui.press("T")
             time.sleep(delay)
 
 
