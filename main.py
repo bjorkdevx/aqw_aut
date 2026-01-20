@@ -172,10 +172,10 @@ YAMI_NO_RONINI_SURVIVAL = [
     #2114114 
     (2, D_YAMI_FAST),
     (1, D_YAMI_FAST),
+    (1, 1.7),
+    (4, 1.8),
     (1, D_YAMI_FAST),
-    (4, D_YAMI_FAST),
-    (1, D_YAMI_FAST),
-    (1, D_YAMI_FAST),
+    (1, 1.7),
     (4, D_YAMI_FAST),
 ]
 
