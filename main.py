@@ -155,7 +155,7 @@ IMPERIAL_CHUNIN_FARMING = [
 
 YAMI_NO_RONINI_DMG = [
     #434424 24245 
-    (3, 2),
+    (3, 1),
     (2, 1),
     (3, 2.2),
     (3, D_YAMI_FAST),
