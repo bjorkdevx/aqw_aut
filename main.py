@@ -170,13 +170,13 @@ YAMI_NO_RONINI_DMG = [
 
 YAMI_NO_RONINI_SURVIVAL = [
     #2114114 
-    (2, 1),
-    (1, 1),
-    (1, 1),
-    (4, 2),
-    (1, 1),
-    (1, 2),
-    (4, 2),
+    (2, D_YAMI_FAST),
+    (1, D_YAMI_FAST),
+    (1, D_YAMI_FAST),
+    (4, D_YAMI_FAST),
+    (1, D_YAMI_FAST),
+    (1, D_YAMI_FAST),
+    (4, D_YAMI_FAST),
 ]
 
 BLOOD = [
